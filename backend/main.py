@@ -32,7 +32,7 @@ if not gemini_api_key:
 else:
     try:
         genai.configure(api_key=gemini_api_key)
-        model = genai.GenerativeModel('gemini-pro')
+        model = genai.GenerativeModel('gemini-flash-2.5')
         logger.info("Gemini успешно инициализирован")
     except Exception as e:
         logger.error(f"Ошибка инициализации Gemini: {str(e)}")
@@ -153,4 +153,5 @@ async def root():
 
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run(app, host="0.0.0.0", port=8000)
